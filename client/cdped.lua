@@ -25,7 +25,6 @@ Citizen.CreateThread(function()
 		if ped then
 			playerModel = GetEntityModel(ped)
 
-        if Saff then 
                 -- Check to see if they're the default ped if not they will be ignored completely
 				if isPedBlacklisted(playerModel) then
                     RemoveAllPedWeapons(ped, true) -- self explanatory removes guns if they have any
