@@ -14,6 +14,5 @@ If you don't have a ``group.staff`` ace permission simply change it to the ace p
 
 # Dependencies
 
-None, i may add in the future support of Badger_Discord_API but ACE Permissions Work Fine.
-
-Kinda requires ``DiscordAcePermissions`` resource by OfficialBadger see his docs for setting up ``DiscordAcePermissions``
+Requires Badger_Discord_API see his documentation on setting that up
+Kinda Requires DiscordAcePerms (if you wish to have automatic ace group setup) see his documentation
