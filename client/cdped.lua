@@ -16,6 +16,8 @@ defaultpedmodel = {
 
 -- Codddeee
 
+local isAllowedBypass = false
+
 Citizen.CreateThread(function()
 	while true do
         Wait(5000)
@@ -26,10 +28,18 @@ Citizen.CreateThread(function()
 			playerModel = GetEntityModel(ped)
 
                 -- Check to see if they're the default ped if not they will be ignored completely
-				if isPedBlacklisted(playerModel) then
+
+				if isPedBlacklisted(playerModel) and not isAllowedBypass then
                     RemoveAllPedWeapons(ped, true) -- self explanatory removes guns if they have any
 					Notify("~r~You're a default ped you can't drive shoot and RP until you change.!")
 				end
+
+
+
+          if isPedBlacklisted(playerModel) and isAllowedBypass then
+            Notify("~r~You have the default ped bypass.")
+            Notify("~g~Please change out of this PED ASAP")
+          end
 
                 -- Check to see if they're in a car in the default ped
                 if IsPedInAnyVehicle(ped) and isPedBlacklisted(playerModel) then
@@ -42,6 +52,21 @@ Citizen.CreateThread(function()
 		end
     end
 end)
+
+
+-- Permisison Checking
+
+Citizen.CreateThread(function()
+    TriggerServerEvent("Xanex-StaffUtil.getIsAllowed")
+end)
+
+
+RegisterNetEvent("Xanex-StaffUtil.returnIsAllowed")
+AddEventHandler("Xanex-StaffUtil.returnIsAllowed", function(isAllowed)
+    isAllowedBypass = isAllowed
+end)
+
+-- Functions
 
 function isPedBlacklisted(model)
 	for _, blacklistedPed in pairs(defaultpedmodel) do
