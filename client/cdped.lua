@@ -1,6 +1,6 @@
 --[[
 
-    Author: Xanex
+    Author: AussieDropBear
     Desc: Stop nerds RPing as default Ped xD
 
 ]]
