@@ -1,6 +1,4 @@
-roleList = {
-    "ARP │ Staff Team", -- Ped Default Bypass DiscordRole
-}
+
 -- Permission Checking....
 RegisterServerEvent("AussieDropBears-StaffUtilites.getIsAllowed")
 AddEventHandler("AussieDropBears-StaffUtilites.getIsAllowed", function()
@@ -29,4 +27,12 @@ AddEventHandler("AussieDropBears-StaffUtilites.getIsAllowed", function()
     end
 	-- Add a event if no discord Identifier is found if you really want...
     -- Such as kicking the user IDK why you would do that though...
+end)
+
+Citizen.CreateThread(function()
+	if (GetCurrentResourceName() ~= "AussieDropBears-StaffUtilites") then
+		--StopResource(GetCurrentResourceName());
+		print("[" .. GetCurrentResourceName() .. "] " .. "IMPORTANT: This resource must be named AussieDropBears-StaffUtilites for it to work properly with other scripts...");
+	end
+	print("[AussieDropBears-StaffUtilites] For support, make sure to join Aspire's official Discord server: discord.gg/RRPEHr3Z2q");
 end)

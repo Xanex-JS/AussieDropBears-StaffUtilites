@@ -5,15 +5,6 @@
 
 ]]
 
--- Restricted Peds Model List
-
-defaultpedmodel = {
-    "a_m_y_skater_01",
-    "a_m_y_skater_02",
-    "a_m_y_hipster_01",
-    "a_m_y_hipster_02",
-}
-
 -- Codddeee
 
 local isAllowedBypass = false
@@ -57,12 +48,12 @@ end)
 -- Permisison Checking
 
 Citizen.CreateThread(function()
-    TriggerServerEvent("Xanex-StaffUtil.getIsAllowed")
+    TriggerServerEvent("AussieDropBears-StaffUtilites.getIsAllowed")
 end)
 
 
-RegisterNetEvent("Xanex-StaffUtil.returnIsAllowed")
-AddEventHandler("Xanex-StaffUtil.returnIsAllowed", function(isAllowed)
+RegisterNetEvent("AussieDropBears-StaffUtilites.returnIsAllowed")
+AddEventHandler("AussieDropBears-StaffUtilites.returnIsAllowed", function(isAllowed)
     isAllowedBypass = isAllowed
 end)
 
