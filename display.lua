@@ -13,7 +13,7 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-	local CurrentVersion = 'v1.0.0'
+	local CurrentVersion = 'v1.1'
 	if not CurrentVersion then
 		print('^1AussieDropBears-StaffUtilites Version Check Failed!^7')
 	end
