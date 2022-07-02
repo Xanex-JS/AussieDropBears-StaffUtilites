@@ -2,8 +2,6 @@ fx_version 'adamant'
 
 game 'gta5'
 
-version '1.0.0'
-
 server_scripts {
 	'server/sclear.lua', -- Clear Chat Script
 	'server/syeet.lua', -- Yeet player script
