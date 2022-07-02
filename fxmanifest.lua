@@ -19,10 +19,3 @@ client_scripts {
 }
 
 -- shared_script 'config.lua'
-
-lua54 'yes'
-
-escrow_ignore {
-	'readme.md',
-	'config/config.lua'
-}
