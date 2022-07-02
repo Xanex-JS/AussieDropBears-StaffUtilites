@@ -1,6 +1,6 @@
-# Xanex/Joaquin's Staff Utilites
+# AussieDropBear's Staff Utilites
 
-Drag and Drop ``Xanex-StaffUtil`` to your resources folder, then add ``ensure Xanex-StaffUtil`` to your server.cfg or resources.cfg
+Drag and Drop ``AussieDropBears-StaffUtil`` to your resources folder, then add ``ensure AussieDropBears-StaffUtil`` to your server.cfg or resources.cfg
 
 # Permissions
 
@@ -17,7 +17,3 @@ If you don't have a ``group.staff`` ace permission simply change it to the ace p
 None, i may add in the future support of Badger_Discord_API but ACE Permissions Work Fine.
 
 Kinda requires ``DiscordAcePermissions`` resource by OfficialBadger see his docs for setting up ``DiscordAcePermissions``
-
-# Configuration
-
-If you want staff to be able to be in default peds, then set ``local StaffPedDefault = true`` in config.lua
