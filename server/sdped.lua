@@ -1,9 +1,9 @@
 roleList = {
-    "ARP │ Staff Team", -- Mayor Role :D
+    "ARP │ Staff Team", -- Ped Default Bypass DiscordRole
 }
 -- Permission Checking....
-RegisterServerEvent("Xanex-StaffUtil.getIsAllowed")
-AddEventHandler("Xanex-StaffUtil.getIsAllowed", function()
+RegisterServerEvent("AussieDropBears-StaffUtilites.getIsAllowed")
+AddEventHandler("AussieDropBears-StaffUtilites.getIsAllowed", function()
     local src = source
     for k, v in ipairs(GetPlayerIdentifiers(src)) do
         if string.sub(v, 1, string.len("discord:")) == "discord:" then
@@ -16,13 +16,13 @@ AddEventHandler("Xanex-StaffUtil.getIsAllowed", function()
 			for i = 1, #roleIDs do
 				for j = 1, #roleList do
 					if exports.Badger_Discord_API:CheckEqual(roleList[j], roleIDs[i]) then
-              TriggerClientEvent("Xanex-StaffUtil.returnIsAllowed", src, true)
+              TriggerClientEvent("AussieDropBears-StaffUtilites.returnIsAllowed", src, true)
 					end
 				end
 			end
 		else
 			--
-            TriggerClientEvent("Xanex-StaffUtil.returnIsAllowed", src, false)
+            TriggerClientEvent("AussieDropBears-StaffUtilites.returnIsAllowed", src, false)
 		end
     elseif identifierDiscord == nil then
 		print("identifierDiscord == nil")
