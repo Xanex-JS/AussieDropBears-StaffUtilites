@@ -33,7 +33,7 @@ Citizen.CreateThread(function()
           end
 
                 -- Check to see if they're in a car in the default ped
-                if IsPedInAnyVehicle(ped) and isPedBlacklisted(playerModel) then
+                if IsPedInAnyVehicle(ped) and isPedBlacklisted(playerModel) and not isAllowedBypass then
                     ClearPedTasksImmediately(ped)
                     ExecuteCommand("dv")
                 end
