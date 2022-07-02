@@ -14,8 +14,5 @@ client_scripts {
 	'client/cclear.lua',  -- Clear Chat Script
 	'client/cyeet.lua', -- Yeet player script
 	'client/cdped.lua',	-- Default ped script
-	-- 'client/cpassive.lua', -- Passive Mode
 	'config/config.lua' -- Config lel...
 }
-
--- shared_script 'config.lua'
