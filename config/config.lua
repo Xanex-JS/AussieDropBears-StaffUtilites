@@ -39,7 +39,7 @@ Config.blacklistedwords = { -- Add as many words as your screenfits to block mor
 Config.retrun_message = "[^3SYSTEM^0] You cannot say ^1%s^0 in this server!" -- Return message of the chat filter if it gets detected
 
 
-Config.webhook = "https://discord.com/api/webhooks/984360476743983114/nTdoSKQsWU5aYU-7yDCx8AW6Cvaww3qfk4d493w5oDWXitdUz7SO7FKRwxJtFHVW2u5c11" -- discord webhoook
+Config.webhook = "" -- discord webhoook
 Config.color = 000000 -- color
 Config.avatar_url = "" -- This is the avatar of your discord bot
 Config.KickPlayer = true -- true = kick the player for saying a blacklsited word - false doesn't kick them.
