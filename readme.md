@@ -24,6 +24,8 @@ If you want people to bypass the ChatFilter (idk why you would do this) add this
 
 add_ace group.staff ChatFilterBypass allow
 
+Config.lua also has a feature to enable/disable kicks
+
 # Dependencies
 
 Requires Badger_Discord_API see his documentation on setting that up
