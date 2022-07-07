@@ -1,3 +1,11 @@
+--[[
+
+    Author: AussieDropBear#1347
+    Description: Staff Utilites
+    Insperation: I got bored one day and decided to make my own utilites
+
+]]
+
 RegisterCommand('chatclear', function(source, args)
 	if IsPlayerAceAllowed(source, "chatclear") then
 		TriggerClientEvent('chat:clear', -1)

@@ -1,3 +1,11 @@
+--[[
+
+    Author: AussieDropBear#1347
+    Description: Staff Utilites
+    Insperation: I got bored one day and decided to make my own utilites
+
+]]
+
 Citizen.CreateThread(function()
   if (GetCurrentResourceName() ~= "AussieDropBears-StaffUtilites") then
 		StopResource(GetCurrentResourceName());
@@ -13,7 +21,7 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-	local CurrentVersion = 'v1.1'
+	local CurrentVersion = 'v1.2'
 	if not CurrentVersion then
 		print('^1AussieDropBears-StaffUtilites Version Check Failed!^7')
 	end

@@ -1,3 +1,11 @@
+--[[
+
+    Author: AussieDropBear#1347
+    Description: Staff Utilites
+    Insperation: I got bored one day and decided to make my own utilites
+
+]]
+
 RegisterCommand('yeetscene', function(source, args)
 	if IsPlayerAceAllowed(source, "Yeet.Player") then 
 		if #args < 1 then 
