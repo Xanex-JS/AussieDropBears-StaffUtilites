@@ -30,6 +30,8 @@ Citizen.CreateThread(function()
 		PerformHttpRequest('https://raw.githubusercontent.com/Xanex-JS/Menu-Checker/master/version.json', VersionCheck, 'GET')
 	end
 
+	-- i am so bored
+
 	function VersionCheck(err, response, headers)
 		Citizen.Wait(3000)
 		if err == 200 then
