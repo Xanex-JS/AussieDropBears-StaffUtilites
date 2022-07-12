@@ -15,8 +15,9 @@ AddEventHandler('chatMessage', function(source, name, message)
       TriggerClientEvent('chat:clear', -1)
       sendtodiscord(src, msg)
       Citizen.Wait(2000)
-      TriggerClientEvent('chat:addMessage', -1, string.format(Config.retrun_message, msg))
+      TriggerClientEvent('chat:addMessage', -1, string.format(Config.return_message, msg))
       TriggerClientEvent('chat:addMessage', -1, '[AussieDropBear StaffUtilites] ' .. GetPlayerName(src) .. '~r~ Tried to say a blacklisted word')
+      -- Lets kick that person if we have the option enabled in config.lua
       if Config.KickPlayer then 
         DropPlayer(src, '[AussieDropBear_StaffUtilites] You have been kicked for using a blacklisted word')
       end

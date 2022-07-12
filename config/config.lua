@@ -30,13 +30,13 @@ defaultpedmodel = {
 
 Config.blacklistedwords = { -- Add as many words as your screenfits to block more words.
     'nigga', 
-    'nigger', 
+    'nigger',
     'Nick Hertz',
     'Faggot',
     'faggot'
 }
 
-Config.retrun_message = "[^3SYSTEM^0] You cannot say ^1%s^0 in this server!" -- Return message of the chat filter if it gets detected
+Config.return_message = "[^3SYSTEM^0] You cannot say ^1%s^0 in this server!" -- Return message of the chat filter if it gets detected
 
 
 Config.webhook = "" -- discord webhoook
