@@ -8,13 +8,15 @@
 
 -- AntiVDM Script 
 
-Citizen.CreateThread(function()
-	while true do
-       Citizen.Wait(0)
+-- Lets check to see if the owner even wants to use this script
+if Config.AntiVDM == true then 
+    -- if they want to use ANTIVDM lets run the below code..
 
-        local ped = GetPlayerPed(-1)
+    Citizen.CreateThread(function()
+        while true do
+            N_0x4757f00bc6323cfe(-1553120962, 0.0) 
+            Wait(0)
+        end
+    end)
 
-        
-
-    end
-end)
+end

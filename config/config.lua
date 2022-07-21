@@ -11,6 +11,10 @@ Config = {}
 -- Prefix for Staff Yeet
 Config.Prefix = '^1[^5Staff Yeet^1] ^3'
 
+-- AntiVDM
+
+Config.AntiVDM = true -- Set to true to enable AntiVDM
+
 -- DefaultPedRestriction roleList for Bypass
 
 roleList = {
