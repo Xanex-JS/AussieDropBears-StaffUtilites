@@ -31,3 +31,7 @@ Config.lua also has a feature to enable/disable kicks
 Requires Badger_Discord_API see his documentation on setting that up
 
 Kinda Requires DiscordAcePerms (if you wish to have automatic ace group setup) see his documentation
+
+# Important 
+
+The AntiVDM is un-tested, please let me know if it doesnt work.
