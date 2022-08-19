@@ -14,8 +14,8 @@ server_scripts {
 	'server/sclear.lua', -- Clear Chat Script
 	'server/cfilter.lua', -- Chat Filter Script
 	'server/syeet.lua', -- Yeet player script
-	'server/sdped.lua', -- Default ped script
-	'server/avdm.lua', -- AntiVDM
+	-- 'server/avdm.lua', -- AntiVDM
+	'server/s_speciald.lua',
 	'display.lua', -- Displays my credits for this Staff Utils :D
 	'config/config.lua' -- Config lel...
 }
@@ -23,6 +23,5 @@ server_scripts {
 client_scripts {
 	'client/cclear.lua',  -- Clear Chat Script
 	'client/cyeet.lua', -- Yeet player script
-	'client/cdped.lua',	-- Default ped script
 	'config/config.lua' -- Config lel...
 }

@@ -18,7 +18,7 @@ Config.AntiVDM = true -- Set to true to enable AntiVDM
 -- DefaultPedRestriction roleList for Bypass
 
 roleList = {
-    "ARP │ Staff Team", -- Ped Default Bypass DiscordRole
+    "Administrator", -- Ped Default Bypass DiscordRole
 }
 
 -- Restricted Peds Model List
