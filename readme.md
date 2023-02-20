@@ -18,6 +18,10 @@ For your staff and or anyone else to have the default ped bypass restricition ch
 
 If you don't have a ``group.staff`` ace permission simply change it to the ace permission your staff are inheriting from.
 
+<!-- Peacetime Detection Bypass -->
+
+This detects if anyone is bypassing peacetime :3
+
 <!-- Chat Filtering Permissions -->
 
 If you want people to bypass the ChatFilter (idk why you would do this) add this permission to their ace group for an example
