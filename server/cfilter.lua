@@ -23,6 +23,30 @@ AddEventHandler('chatMessage', function(source, name, message)
       end
 
     end
+
+    -- Lets block IPS and Links aswell
+    --[[
+    if string.match(msg, "[12]?%d%d?%.[12]?%d%d?%.[12]?%d%d?%.[12]?%d%d?") and string.match(msg, "https?://[%w-_%.%?%.:/%+=&]+") then -- Lets detects if they post an IP address
+      CancelEvent()
+        msg = msg:gsub("https?://[%w-_%.%?%.:/%+=&]+", "blocked_link")
+      msg = msg:gsub("[12]?%d%d?%.[12]?%d%d?%.[12]?%d%d?%.[12]?%d%d?", "blocked_ip")
+      TriggerClientEvent('chatMessage', -1, name, { 255, 255, 255 }, msg)
+    end
+  
+    if string.match(msg, "[12]?%d%d?%.[12]?%d%d?%.[12]?%d%d?%.[12]?%d%d?") then -- Lets detects if they post an IP address
+      CancelEvent()
+      msg = msg:gsub("[12]?%d%d?%.[12]?%d%d?%.[12]?%d%d?%.[12]?%d%d?", "blocked_ip")
+      TriggerClientEvent('chatMessage', -1, name, { 255, 255, 255 }, msg)
+    end
+  
+    if string.match(msg, "https?://[%w-_%.%?%.:/%+=&]+") then -- Lets detects if they post a Link
+      CancelEvent()
+      msg = msg:gsub("https?://[%w-_%.%?%.:/%+=&]+", "blocked_link")
+      TriggerClientEvent('chatMessage', -1, name, { 255, 255, 255 }, msg)
+    end
+  ]]
+    -- End of IP and Link Detection
+
 end)
 
 
