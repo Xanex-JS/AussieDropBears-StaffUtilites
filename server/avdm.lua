@@ -9,7 +9,6 @@
 -- AntiVDM Script 
 
 -- Lets check to see if the owner even wants to use this script
-if Config.AntiVDM == true then 
     -- if they want to use ANTIVDM lets run the below code..
 
     Citizen.CreateThread(function()
@@ -18,5 +17,3 @@ if Config.AntiVDM == true then
             Wait(0)
         end
     end)
-
-end
