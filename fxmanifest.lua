@@ -6,7 +6,7 @@
 
 ]]
 
-fx_version 'adamant'
+fx_version 'cerulean'
 
 game 'gta5'
 
@@ -15,13 +15,15 @@ server_scripts {
 	'server/cfilter.lua', -- Chat Filter Script
 	'server/syeet.lua', -- Yeet player script
 	-- 'server/avdm.lua', -- AntiVDM
-	'server/s_speciald.lua',
+	'server/s_staffduty.lua', -- Staff duty script
+	'server/s_speciald.lua', -- username filtering
 	'display.lua', -- Displays my credits for this Staff Utils :D
 	'config/config.lua' -- Config lel...
 }
 
 client_scripts {
 	'client/cclear.lua',  -- Clear Chat Script
+	'client/c_staffduty.lua', -- Staff Duty Script
 	'client/cyeet.lua', -- Yeet player script
 	'config/config.lua' -- Config lel...
 }

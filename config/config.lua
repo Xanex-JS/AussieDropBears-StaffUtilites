@@ -8,6 +8,14 @@
 
 Config = {}
 
+-- Staff Duty System
+
+Config.StaffDuty = {
+
+    ["SystemEnabled"] = true, -- Enable or disable the system
+
+}
+
 -- Prefix for Staff Yeet
 Config.Prefix = '^1[^5Staff Yeet^1] ^3'
 
