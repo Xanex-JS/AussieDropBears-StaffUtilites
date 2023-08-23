@@ -16,14 +16,15 @@ add_ace group.staff chatclear allow -- Allows staff to use the /chatclear comman
 
 Change the command in config.lua
 Default command is /adminonduty to turn it on.
-Enables god mode  alot of other things
+Enables god mode alot of other things
 display text above head and on screen alerting this is enabled. 
 
 add_ace group.staff staffduty allow -- Allows staff to use the /adminonduty command
 
 <!-- Server Lockdown Join Restriction -->
 
-the command is restrictjoin
+This is a lockdown feature available to staff to prevent joining I.E mass Minges joining, script kiddies etc.
+Default command is /restrictjoin 
 add_ace group.staff lockdowncom allow -- Allows staff to use the /restrictjoin command
 
 <!-- Default Ped Restrciton  -->
