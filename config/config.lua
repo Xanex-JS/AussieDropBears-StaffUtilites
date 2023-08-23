@@ -11,7 +11,8 @@ Config = {}
 -- Staff Duty System
 
 Config.StaffDuty = {
-    ["EnableSystem"] = true -- change to false to disable the staff duty script :3
+    ["EnableSystem"] = true, -- change to false to disable the staff duty script :3
+    ["Command"] = "adminonduty", -- change to whatever you want make sure to leave "" EX "adminonduty"
 }
 
 -- Prefix for Staff Yeet

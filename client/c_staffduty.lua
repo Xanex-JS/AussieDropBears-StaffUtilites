@@ -6,42 +6,73 @@
 
 ]]
 local AdminMode = false
+local isAllowedBypass = false
 -- Making sure the command is only made if the system has been enabled in config.lua
 
 RegisterNetEvent('StaffSystemEnabled', function(data)
+    local CommandList = Config.StaffDuty["Command"]
 
     -- Command
-    RegisterCommand('AdminEnable', function(source, args, RawCommand)
+    RegisterCommand(CommandList, function(source, args, RawCommand)
         TriggeredAdmin = not TriggeredAdmin
 
+        if isAllowedBypass then 
         if TriggeredAdmin then 
             AdminMode = true
+            AdminModeTurnedOn(source)
             TriggerEvent('chatMessage', "^1 ADMIN MODE ENABLED")
         else
             AdminMode = false
+            AdminModeTurnedOn(source)
             TriggerEvent('chatMessage', "^2 ADMIN MODE DISABLED")
         end
-
+    else
+            TriggerEvent('chatMessage', "[ADMINISTRATION]^1 you're not staff")
+    end -- staff authority end
     end)
     -- end of command
 
 end)
 
+-- Functions to Set Infinity Health etc
+
+function AdminModeTurnedOn(source)
+    AlreadyToggled = not AlreadyToggled
+	local playerPed = GetPlayerPed(-1)
+
+    if AlreadyToggled then
+        SetEntityInvincible(GetPlayerPed(-1), true)
+        SetPlayerInvincible(PlayerId(), true)
+        SetPedCanRagdoll(GetPlayerPed(-1), false)
+        ClearPedBloodDamage(GetPlayerPed(-1))
+        ResetPedVisibleDamage(GetPlayerPed(-1))
+        ClearPedLastWeaponDamage(GetPlayerPed(-1))
+        SetEntityProofs(GetPlayerPed(-1), true, true, true, true, true, true, true, true)
+        SetEntityOnlyDamagedByPlayer(GetPlayerPed(-1), false)
+        SetEntityCanBeDamaged(GetPlayerPed(-1), false)
 
 
 
+        print("Added On duty Benefits")
+    else
+        SetEntityInvincible(GetPlayerPed(-1), false)
+        SetPlayerInvincible(PlayerId(), false)
+        SetPedCanRagdoll(GetPlayerPed(-1), false)
+        ClearPedBloodDamage(GetPlayerPed(-1))
+        ResetPedVisibleDamage(GetPlayerPed(-1))
+        ClearPedLastWeaponDamage(GetPlayerPed(-1))
+        SetEntityProofs(GetPlayerPed(-1), false, false, false, false, false, false, false, false)
+        SetEntityOnlyDamagedByPlayer(GetPlayerPed(-1), false)
+        SetEntityCanBeDamaged(GetPlayerPed(-1), false)
 
 
 
+        print('Removed Duty Benefits')
+    end -- admin mode check end
 
- 
+end -- function end
 
-
-
-
-
-
--- Functions
+-- Functions for display text on the screen
 
 Citizen.CreateThread(function()
 	while true do

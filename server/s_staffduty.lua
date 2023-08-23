@@ -14,13 +14,17 @@ Citizen.Wait(2000)
 
 if Config.StaffDuty["EnableSystem"] then 
     print("^2 ADMIN SYSTEM ON")
-
-    
-
     TriggerClientEvent('StaffSystemEnabled', -1) -- Lets create the command if the system is enabled
     else
     print('^1 ADMIN DUTY SYSTEM IS TURNED OFF')
-
-
-
 end
+
+RegisterNetEvent('GiveAdminEffects')
+AddEventHandler('GiveAdminEffects', function(source)
+    print('server effect')
+
+    local ped = PlayerPedId(source)
+
+	SetPlayerInvincible(ped, true) 
+
+end)
