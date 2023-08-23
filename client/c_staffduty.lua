@@ -5,38 +5,45 @@
     Insperation: I got bored one day and decided to make my own utilites
 
 ]]
-local AdminMode = false
-local isAllowedBypass = false
--- Making sure the command is only made if the system has been enabled in config.lua
 
-RegisterNetEvent('StaffSystemEnabled', function(data)
-    local CommandList = Config.StaffDuty["Command"]
+local isAdminModeEnabled = false
 
-    -- Command
-    RegisterCommand(CommandList, function(source, args, RawCommand)
-        TriggeredAdmin = not TriggeredAdmin
-
-        if isAllowedBypass then 
-        if TriggeredAdmin then 
-            AdminMode = true
-            AdminModeTurnedOn(source)
-            TriggerEvent('chatMessage', "^1 ADMIN MODE ENABLED")
-        else
-            AdminMode = false
-            AdminModeTurnedOn(source)
-            TriggerEvent('chatMessage', "^2 ADMIN MODE DISABLED")
-        end
-    else
-            TriggerEvent('chatMessage', "[ADMINISTRATION]^1 you're not staff")
-    end -- staff authority end
-    end)
-    -- end of command
-
+-- Event to enable admin mode on the client
+RegisterNetEvent("enableAdminMode")
+AddEventHandler("enableAdminMode", function()
+    isAdminModeEnabled = true
 end)
 
--- Main function for the script, enabling all the automatic features for staff.
+-- Event to disable admin mode on the client
+RegisterNetEvent("disableAdminMode")
+AddEventHandler("disableAdminMode", function()
+    isAdminModeEnabled = false
+end)
 
-function AdminModeTurnedOn(source)
+-- Event to update admin mode status on the client
+RegisterNetEvent("updateAdminModeStatus")
+AddEventHandler("updateAdminModeStatus", function(status)
+    isAdminModeEnabled = status
+end)
+
+-- Main loop to display text above player's head
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(0)
+        if isAdminModeEnabled then
+            local playerPed = PlayerPedId()
+            local playerCoords = GetEntityCoords(playerPed)
+            DrawText3D(playerCoords.x, playerCoords.y, playerCoords.z + 1.0, "~o~I HAVE ADMINISTRATION MODE ACTIVE")
+        end
+    end
+end)
+
+-- Give Admin Shit
+
+RegisterNetEvent('GiveAdminStuff')
+AddEventHandler('GiveAdminStuff', function()
+
+if isAdminModeEnabled then
     AlreadyToggled = not AlreadyToggled
 	local playerPed = GetPlayerPed(-1)
 
@@ -50,10 +57,6 @@ function AdminModeTurnedOn(source)
         SetEntityProofs(GetPlayerPed(-1), true, true, true, true, true, true, true, true)
         SetEntityOnlyDamagedByPlayer(GetPlayerPed(-1), false)
         SetEntityCanBeDamaged(GetPlayerPed(-1), false)
-
-
-
-        print("Added On duty Benefits")
     else
         SetEntityInvincible(GetPlayerPed(-1), false)
         SetPlayerInvincible(PlayerId(), false)
@@ -64,33 +67,47 @@ function AdminModeTurnedOn(source)
         SetEntityProofs(GetPlayerPed(-1), false, false, false, false, false, false, false, false)
         SetEntityOnlyDamagedByPlayer(GetPlayerPed(-1), false)
         SetEntityCanBeDamaged(GetPlayerPed(-1), false)
-
-
-
-        print('Removed Duty Benefits')
     end -- admin mode check end
+end
 
-end -- function end
+end)
+-- Function to draw 3D text
+function DrawText3D(x, y, z, text)
+    local onScreen, _x, _y = World3dToScreen2d(x, y, z)
+    local px, py, pz = table.unpack(GetGameplayCamCoords())
+    
+    SetTextScale(0.35, 0.35)
+    SetTextFont(4)
+    SetTextProportional(1)
+    SetTextColour(255, 255, 255, 255)
+    SetTextEntry("STRING")
+    SetTextCentre(true)
+    AddTextComponentString(text)
+    DrawText(_x, _y)
+    local factor = (string.len(text)) / 370
+    DrawRect(_x, _y + 0.0125, 0.015 + factor, 0.03, 41, 11, 41, 90)
+end
 
 -- Functions for display text on the screen
+
+function adminEnabled()
+
+    if isAdminModeEnabled then 
+        return true 
+    else 
+        return false
+    end
+end
 
 Citizen.CreateThread(function()
 	while true do
 		Wait(0);
 		local Ped = GetPlayerPed(-1);
-		if AdminMode1() then
+		if adminEnabled() then
 			Draw2DText(0.090, 0.672, "~g~Admin Mode: ~r~ENABLED", 0.5, 1);
         end
     end
 end)
-
-function AdminMode1()
-    if AdminMode then
-    return true
-    else
-    return false
-    end
-end
 
 local function RGBRainbow( frequency )
 	local result = {}

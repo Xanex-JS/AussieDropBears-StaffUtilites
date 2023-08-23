@@ -8,6 +8,17 @@
 
 local StaffDutyCheck = true
 
+RegisterCommand("adminmode", function(source, args, rawCommand)
+    adminModeEnabled = not adminModeEnabled
+    if adminModeEnabled then
+        TriggerClientEvent("enableAdminMode", -1)  -- Broadcast to all players
+        TriggerClientEvent('GiveAdminStuff', source)
+    else
+        TriggerClientEvent('GiveAdminStuff', source)
+        TriggerClientEvent("disableAdminMode", -1)
+    end
+end, false)
+
 Citizen.Wait(2000)
 
 -- Making sure the command is only made if the system has been enabled in config.lua
