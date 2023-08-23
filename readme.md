@@ -12,6 +12,20 @@ add_ace group.staff Yeet.Player allow -- Allows Staff to use the /yeetscene comm
 
 add_ace group.staff chatclear allow -- Allows staff to use the /chatclear command
 
+<!-- Staff Duty -->
+
+Change the command in config.lua
+Default command is /adminonduty to turn it on.
+Enables god mode  alot of other things
+display text above head and on screen alerting this is enabled. 
+
+add_ace group.staff staffduty allow -- Allows staff to use the /adminonduty command
+
+<!-- Server Lockdown Join Restriction -->
+
+the command is restrictjoin
+add_ace group.staff lockdowncom allow -- Allows staff to use the /restrictjoin command
+
 <!-- Default Ped Restrciton  -->
 
 For your staff and or anyone else to have the default ped bypass restricition change the Discord role name in Config.lua named roleList to discord roles you want to have the bypass.

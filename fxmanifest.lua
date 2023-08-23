@@ -12,6 +12,7 @@ game 'gta5'
 
 server_scripts {
 	'server/sclear.lua', -- Clear Chat Script
+	'server/s_joinlockdown.lua', -- Server lockdown script
 	'config/config.lua', -- Config lel...
 	'server/cfilter.lua', -- Chat Filter Script
 	'server/syeet.lua', -- Yeet player script

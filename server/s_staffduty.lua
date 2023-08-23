@@ -10,6 +10,7 @@ local StaffDutyCheck = true
 
 RegisterCommand(Config.StaffDuty["Command"], function(source, args, rawCommand)
     adminModeEnabled = not adminModeEnabled
+    if IsPlayerAceAllowed(source, "staffduty") then
     if adminModeEnabled then
         TriggerClientEvent("enableAdminMode", -1)  -- Broadcast to all players
         TriggerClientEvent('GiveAdminStuff', source)
@@ -17,6 +18,9 @@ RegisterCommand(Config.StaffDuty["Command"], function(source, args, rawCommand)
         TriggerClientEvent('GiveAdminStuff', source)
         TriggerClientEvent("disableAdminMode", -1)
     end
+else
+    TriggerEvent('chatMessage', "fuck off")
+end
 end, false)
 
 
