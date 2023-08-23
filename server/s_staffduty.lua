@@ -6,8 +6,21 @@
 
 ]]
 
-if Config.StaffDuty == true then 
+local StaffDutyCheck = true
 
-        print('Duty system enabled')
+Citizen.Wait(2000)
+
+-- Making sure the command is only made if the system has been enabled in config.lua
+
+if Config.StaffDuty["EnableSystem"] then 
+    print("^2 ADMIN SYSTEM ON")
+
+    
+
+    TriggerClientEvent('StaffSystemEnabled', -1) -- Lets create the command if the system is enabled
+    else
+    print('^1 ADMIN DUTY SYSTEM IS TURNED OFF')
+
+
 
 end

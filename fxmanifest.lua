@@ -14,7 +14,6 @@ server_scripts {
 	'server/sclear.lua', -- Clear Chat Script
 	'server/cfilter.lua', -- Chat Filter Script
 	'server/syeet.lua', -- Yeet player script
-	-- 'server/avdm.lua', -- AntiVDM
 	'server/s_staffduty.lua', -- Staff duty script
 	'server/s_speciald.lua', -- username filtering
 	'display.lua', -- Displays my credits for this Staff Utils :D

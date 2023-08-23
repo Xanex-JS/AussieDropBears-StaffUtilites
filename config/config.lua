@@ -11,9 +11,7 @@ Config = {}
 -- Staff Duty System
 
 Config.StaffDuty = {
-
-    ["SystemEnabled"] = true, -- Enable or disable the system
-
+    ["EnableSystem"] = true -- change to false to disable the staff duty script :3
 }
 
 -- Prefix for Staff Yeet
