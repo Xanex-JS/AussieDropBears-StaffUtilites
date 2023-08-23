@@ -12,17 +12,17 @@ game 'gta5'
 
 server_scripts {
 	'server/sclear.lua', -- Clear Chat Script
+	'config/config.lua', -- Config lel...
 	'server/cfilter.lua', -- Chat Filter Script
 	'server/syeet.lua', -- Yeet player script
 	'server/s_staffduty.lua', -- Staff duty script
 	'server/s_speciald.lua', -- username filtering
-	'display.lua', -- Displays my credits for this Staff Utils :D
-	'config/config.lua' -- Config lel...
+	'display.lua' -- Displays my credits for this Staff Utils :D
 }
 
 client_scripts {
+	'config/config.lua', -- Config lel...
 	'client/cclear.lua',  -- Clear Chat Script
 	'client/c_staffduty.lua', -- Staff Duty Script
-	'client/cyeet.lua', -- Yeet player script
-	'config/config.lua' -- Config lel...
+	'client/cyeet.lua' -- Yeet player script
 }
