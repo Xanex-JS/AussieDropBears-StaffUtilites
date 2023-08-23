@@ -34,7 +34,7 @@ RegisterNetEvent('StaffSystemEnabled', function(data)
 
 end)
 
--- Functions to Set Infinity Health etc
+-- Main function for the script, enabling all the automatic features for staff.
 
 function AdminModeTurnedOn(source)
     AlreadyToggled = not AlreadyToggled
