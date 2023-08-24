@@ -21,6 +21,9 @@ Citizen.CreateThread(function()
 ---
 
 
+local DefaultDesnity = false
+local CustomDensity = false
+
 RegisterNetEvent('ChangeDensity')
 AddEventHandler('ChangeDensity', function(NewInput)
     local Default = Config.ControlDensity["DefaultDensityNumber"]
@@ -32,10 +35,12 @@ AddEventHandler('ChangeDensity', function(NewInput)
         DefaultDesnity = false
     end
 
+    Wait(0) --  Give other tasks an opportunity to execute before continuing the script.
+
     if DefaultDesnity then 
 
         Citizen.CreateThread(function()
-            while (true) do
+            while DefaultDesnity do --- Other task. Ensures that the loop only runs while the DefaultDesnity variable is true.
                 SetVehicleDensityMultiplierThisFrame(Default)
                 SetPedDensityMultiplierThisFrame(1.0)
                 SetRandomVehicleDensityMultiplierThisFrame(Default)
@@ -49,13 +54,26 @@ AddEventHandler('ChangeDensity', function(NewInput)
         TriggerEvent('chatMessage', "^1[Administration] ^2Staff has changed AI Density, to default: " .. Default, -1)
 
     elseif CustomDensity then 
-        
+
+        Citizen.CreateThread(function()
+            while CustomDensity do --- Other task. Ensures that the loop only runs while the DefaultDesnity variable is true.
+                SetVehicleDensityMultiplierThisFrame(NewInput)
+                SetPedDensityMultiplierThisFrame(1.0)
+                SetRandomVehicleDensityMultiplierThisFrame(NewInput)
+                SetParkedVehicleDensityMultiplierThisFrame(NewInput)
+                SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0)
+                print("POGGERS")
+                Citizen.Wait(0)
+            end
+        end)
+
         TriggerEvent('chatMessage', "^1[Administration] ^2Staff has changed AI Density, New Value is: " .. NewInput, -1)
 
     end
     
 
-end) -- close client event
+end) -- close client event```
+
 
 RegisterNetEvent('SendMessage')
 AddEventHandler('SendMessage', function()
