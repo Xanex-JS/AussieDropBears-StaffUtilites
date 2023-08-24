@@ -8,6 +8,14 @@
 
 Config = {}
 
+-- Staff Control Ped/Vehicle Density
+
+Config.ControlDensity = {
+    ["EnableControl"] = true, -- change to false to now allow staff to control the desnity
+    ["CCommand"] = "controldens", -- command for controlling density
+    ["DefaultDensityNumber"] = 0.5
+}
+
 -- Staff Duty System
 
 Config.StaffDuty = {

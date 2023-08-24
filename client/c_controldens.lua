@@ -1,0 +1,81 @@
+--[[
+
+    Author: AussieDropBear#1347
+    Description: Staff Utilites
+    Insperation: I got bored one day and decided to make my own utilites
+
+]]
+local DefaultDesnity = true
+local CustomDensity = false
+-- i am the same no matter what
+
+Citizen.CreateThread(function()
+    while true do
+    Citizen.Wait(0)
+    local playerPed = GetPlayerPed(-1)
+    local playerLocalisation = GetEntityCoords(playerPed)
+    ClearAreaOfCops(playerLocalisation.x, playerLocalisation.y, playerLocalisation.z, 400.0)
+    end
+    end)
+
+---
+
+
+RegisterNetEvent('ChangeDensity')
+AddEventHandler('ChangeDensity', function(NewInput)
+    local Default = Config.ControlDensity["DefaultDensityNumber"]
+
+    if NewInput == Default then 
+        DefaultDesnity = true
+    elseif NewInput ~= Default then 
+        CustomDensity = true
+        DefaultDesnity = false
+    end
+
+    if DefaultDesnity then 
+
+        Citizen.CreateThread(function()
+            while (true) do
+                SetVehicleDensityMultiplierThisFrame(Default)
+                SetPedDensityMultiplierThisFrame(1.0)
+                SetRandomVehicleDensityMultiplierThisFrame(Default)
+                SetParkedVehicleDensityMultiplierThisFrame(Default)
+                SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0)
+                print("POGGERS")
+                Citizen.Wait(0)
+            end
+        end)
+
+        TriggerEvent('chatMessage', "^1[Administration] ^2Staff has changed AI Density, to default: " .. Default, -1)
+
+    elseif CustomDensity then 
+        
+        TriggerEvent('chatMessage', "^1[Administration] ^2Staff has changed AI Density, New Value is: " .. NewInput, -1)
+
+    end
+    
+
+end) -- close client event
+
+RegisterNetEvent('SendMessage')
+AddEventHandler('SendMessage', function()
+
+    TriggerEvent('chat:addMessage', {
+        color = { 255, 0, 0},
+        multiline = true,
+        args = {"ADMINISTRATION", "You need to enter a number below 3.0"}
+      })
+      
+
+end)
+
+RegisterNetEvent('NumbersOnly')
+AddEventHandler('NumbersOnly', function()
+
+    TriggerEvent('chat:addMessage', {
+        color = { 255, 0, 0},
+        multiline = true,
+        args = {"ADMINISTRATION", "You can only enter numbers not words."}
+      })
+
+end)
