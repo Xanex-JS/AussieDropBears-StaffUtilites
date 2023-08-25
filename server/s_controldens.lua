@@ -16,6 +16,7 @@ if Config.ControlDensity["EnableControl"] then
 
 
 RegisterCommand(ControlCommand, function(source, args, RawCommand)
+    if IsPlayerAceAllowed(source, "density") then
         local Newinput = tonumber(args[1])
 
         if Newinput == nil then 
@@ -37,6 +38,7 @@ RegisterCommand(ControlCommand, function(source, args, RawCommand)
         end
         end
             --TriggerClientEvent('ChangeDensity', NewInput)
+    end
 end)
 
 

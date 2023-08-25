@@ -12,6 +12,13 @@ add_ace group.staff Yeet.Player allow -- Allows Staff to use the /yeetscene comm
 
 add_ace group.staff chatclear allow -- Allows staff to use the /chatclear command
 
+<!-- Change AI Density -->
+
+Default Command: `controldens`, can be changed in config.lua
+Default density is 0.5 can be changed in config
+
+add_ace group.staff density allow -- Allows staff to use the /controldens command
+
 <!-- Staff Duty -->
 
 Change the command in config.lua
