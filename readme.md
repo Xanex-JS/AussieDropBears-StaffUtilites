@@ -1,8 +1,10 @@
 # AussieDropBear's Staff Utilites
 
-Drag and Drop ``AussieDropBears-StaffUtil`` to your resources folder
+Drag and Drop ``AussieDropBears-StaffUtilites`` to your resources folder
 
-Add ``ensure AussieDropBears-StaffUtil`` to your server.cfg or resources.cfg
+Add ``ensure AussieDropBears-StaffUtilites`` to your server.cfg or resources.cfg
+
+# CHANGING THE NAME WILL CAUSE SOME ISSUES WITH PERMISSION CHECKING, FEEL FREE TO FIX THIS IF YOU KNOW HOW TO, I'M TOO LAZY TO MAKE IT CHECK THE FOLDER NAME AUTOMATICLY.
 
 # Permissions
 
