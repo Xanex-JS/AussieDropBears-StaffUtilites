@@ -46,7 +46,7 @@ AddEventHandler('ChangeDensity', function(NewInput)
                 SetRandomVehicleDensityMultiplierThisFrame(Default)
                 SetParkedVehicleDensityMultiplierThisFrame(Default)
                 SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0)
-                print("POGGERS")
+                print("Default Dens", Default)
                 Citizen.Wait(0)
             end
         end)
@@ -56,13 +56,13 @@ AddEventHandler('ChangeDensity', function(NewInput)
     elseif CustomDensity then 
 
         Citizen.CreateThread(function()
-            while CustomDensity do --- Other task. Ensures that the loop only runs while the DefaultDesnity variable is true.
+            while CustomDensity do --- Other task. Ensures that the loop only runs while the CustomDensity variable is true.
                 SetVehicleDensityMultiplierThisFrame(NewInput)
                 SetPedDensityMultiplierThisFrame(1.0)
                 SetRandomVehicleDensityMultiplierThisFrame(NewInput)
                 SetParkedVehicleDensityMultiplierThisFrame(NewInput)
                 SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0)
-                print("POGGERS")
+                print("Custom Density", NewInput)     -- IMPLEMENT SO IF THE DESNITY CHANGES MULTIPLE TIMES BEFORE A RESTART IT REMOVES THE OLD DESN AND DOESNT MASS CREATE THREADS
                 Citizen.Wait(0)
             end
         end)
