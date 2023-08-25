@@ -30,6 +30,7 @@ AddEventHandler('ChangeDensity', function(NewInput)
 
     if NewInput == Default then 
         DefaultDesnity = true
+        CustomDensity = false
     elseif NewInput ~= Default then 
         CustomDensity = true
         DefaultDesnity = false
@@ -74,6 +75,18 @@ AddEventHandler('ChangeDensity', function(NewInput)
 
 end) -- close client event```
 
+
+RegisterNetEvent('AccessDenied')
+AddEventHandler('AccessDenied', function()
+
+    TriggerEvent('chat:addMessage', {
+        color = { 255, 0, 0},
+        multiline = true,
+        args = {"ADMINISTRATION", "A Custom Density has already been enabled, please wait till server restart or contact senior leadership"}
+      })
+      
+
+end)
 
 RegisterNetEvent('SendMessage')
 AddEventHandler('SendMessage', function()

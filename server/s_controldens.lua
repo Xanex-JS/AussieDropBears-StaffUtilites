@@ -8,6 +8,7 @@
 
 local ControlCommand = Config.ControlDensity["CCommand"] -- get the command from the config.lua file
 local MaxInput = 3 
+local AlreadyCustomDensity = false
 
 
 if Config.ControlDensity["EnableControl"] then 
@@ -24,7 +25,12 @@ RegisterCommand(ControlCommand, function(source, args, RawCommand)
             
         if Newinput <= MaxInput then 
 
-            TriggerClientEvent('ChangeDensity', -1, Newinput)
+            if AlreadyCustomDensity then 
+                TriggerClientEvent('AccessDenied', source)
+            else
+                AlreadyCustomDensity = true
+                TriggerClientEvent('ChangeDensity', -1, Newinput)
+            end
 
         elseif Newinput > MaxInput then
             TriggerClientEvent('SendMessage', source)    
